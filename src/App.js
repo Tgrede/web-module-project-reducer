@@ -26,6 +26,18 @@ function App() {
     dispatch(actions.clearDisplay())
   }
 
+  const setToMemoryHandler = () => {
+    dispatch(actions.setTotalToMemory())
+  }
+
+  const applyMemoryHandler = () => {
+    dispatch(actions.applyMemoryToTotal())
+  }
+
+  const clearMemoryHandler = () => {
+    dispatch(actions.clearMemory())
+  }
+
   return (
     <div className="App">
       <nav className="navbar navbar-dark bg-dark">
@@ -43,9 +55,9 @@ function App() {
             </div>
             
             <div className="row">
-              <CalcButton value={"M+"}/>
-              <CalcButton value={"MR"}/>
-              <CalcButton value={"MC"}/>
+              <CalcButton onClick={() => setToMemoryHandler()} value={"M+"}/>
+              <CalcButton onClick={() => applyMemoryHandler()} value={"MR"}/>
+              <CalcButton onClick={() => clearMemoryHandler()} value={"MC"}/>
             </div>
 
             <div className="row">
